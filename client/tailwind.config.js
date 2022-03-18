@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
@@ -11,7 +13,20 @@ module.exports = {
         xl: '5rem',
       },
     },
-    extend: {},
+    fontFamily: {
+      sans: ['Patrick Hand', 'cursive'],
+    },
+    extend: {
+      colors: {
+        dark: {
+          500: '#4B5563',
+          600: '#374151',
+          700: '#1F2937',
+          800: '#111827',
+        },
+        typo: colors.neutral,
+      },
+    },
   },
   plugins: [],
 };
