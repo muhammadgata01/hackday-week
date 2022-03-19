@@ -8,7 +8,7 @@ function Discover() {
       <div className="py-4">
         <BaseCardLarge />
       </div>
-      <section className="grid grid-cols-3 gap-x-8 gap-y-16 py-16">
+      <section className="grid gap-x-8 gap-y-16 py-16 sm:grid-cols-2 lg:grid-cols-3">
         <BaseCardSmall />
         <BaseCardSmall />
         <BaseCardSmall />
