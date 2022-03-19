@@ -5,7 +5,7 @@ function BaseCardContent() {
   return (
     <div className="mt-4 lg:col-span-1">
       <span>Tailwind &bull; 12 Maret</span>
-      <Link to="">
+      <Link to="/articles/1">
         <h2 className="my-4">Setup Tailwind Css 3 In React Project</h2>
       </Link>
       <p className="mb-6 w-10/12 text-typo-400">
