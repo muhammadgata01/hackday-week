@@ -4,6 +4,7 @@ import Discover from './pages/Discover';
 import Create from './pages/Create';
 import TheNavbar from './components/template/TheNavbar';
 import TheFooter from './components/template/TheFooter';
+import ArticlesDetail from './pages/ArticlesDetail';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Discover />} />
           <Route path="/create" element={<Create />}></Route>
+          <Route path="/articles/:id" element={<ArticlesDetail />}></Route>
         </Routes>
         <TheFooter />
       </div>
