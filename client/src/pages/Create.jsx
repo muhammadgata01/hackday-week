@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function Create() {
   const [title, setTitle] = useState('');
@@ -10,7 +11,16 @@ function Create() {
   const handleSubmit = e => {
     e.preventDefault();
     const postPost = { title, tag, snippet, body, image };
-    console.log(postPost);
+
+    const baseUrl = 'http://localhost:5000/v1/api';
+    axios.post(`${baseUrl}/posts`, postPost).then(() => {
+      alert('Added successful');
+      setTitle('');
+      setTag('');
+      setSnippet('');
+      setBody('');
+      setImage('');
+    });
   };
 
   return (
