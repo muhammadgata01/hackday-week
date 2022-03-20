@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function BaseCardContent() {
+function BaseCardContent({ content }) {
+  const { id, title, tag, snippet } = content;
   return (
     <div className="mt-4 lg:col-span-1">
-      <span>Tailwind &bull; 12 Maret</span>
-      <Link to="/articles/1">
-        <h2 className="my-4">Setup Tailwind Css 3 In React Project</h2>
+      <span>{tag} &bull; 12 Maret</span>
+      <Link to={`articles/${id}`}>
+        <h2 className="my-4">{title}</h2>
       </Link>
-      <p className="mb-6 w-10/12 text-typo-400">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam
-        mollitia incidunt, ea nulla sapiente perspiciatis veritatis?
-      </p>
+      <p className="mb-6 w-10/12 text-typo-400">{snippet}</p>
       <div className="flex items-center gap-4">
         <img
           src={

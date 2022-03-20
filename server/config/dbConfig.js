@@ -2,6 +2,6 @@ module.exports = {
   HOST: 'localhost',
   USER: 'irene',
   PASS: 'irene01',
-  DB: 'express-rest-api-2',
+  DB: 'simple-posts',
   dialect: 'mysql',
 };
