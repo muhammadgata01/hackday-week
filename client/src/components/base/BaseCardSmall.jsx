@@ -6,9 +6,7 @@ function BaseCardSmall() {
     <article className="w-full">
       <figure>
         <img
-          src={
-            'https://ik.imagekit.io/3t4mp2a1w30/image-3_FfIkQPpHL.png?ik-sdk-version=javascript-1.4.3&updatedAt=1647621791433'
-          }
+          src={'/images/image-1.png'}
           className="h-auto w-full"
           alt="Image Card"
         />
