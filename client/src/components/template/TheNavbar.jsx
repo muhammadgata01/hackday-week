@@ -17,8 +17,8 @@ function TheNavbar() {
           <Link to="/" className="hover:underline">
             Discover
           </Link>
-          <Link to="/create" className="hover:underline">
-            Create Post
+          <Link to="/dashboard" className="hover:underline">
+            Dashboard
           </Link>
         </div>
       </div>

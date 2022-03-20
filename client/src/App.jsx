@@ -5,6 +5,7 @@ import Create from './pages/Create';
 import TheNavbar from './components/template/TheNavbar';
 import TheFooter from './components/template/TheFooter';
 import ArticlesDetail from './pages/ArticlesDetail';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
         <TheNavbar />
         <Routes>
           <Route path="/" element={<Discover />} />
-          <Route path="/create" element={<Create />}></Route>
           <Route path="/articles/:id" element={<ArticlesDetail />}></Route>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/create" element={<Create />}></Route>
         </Routes>
         <TheFooter />
       </div>
