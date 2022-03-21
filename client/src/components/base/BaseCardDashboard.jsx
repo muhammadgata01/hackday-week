@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import BaseButton from './BaseButton';
+import BaseButtonWIthEvent from './BaseButtonWIthEvent';
 
 function BaseCardDashboard({ data }) {
   const { id, title } = data;
@@ -18,12 +20,10 @@ function BaseCardDashboard({ data }) {
     <div className="p-4 bg-dark-500 rounded-lg">
       <h2 className="mb-8">{title}</h2>
       <div className="flex gap-2">
-        <button className="bg-orange-500 rounded-md px-4 py-2">Edit</button>
-        <button
-          onClick={deletePost}
-          className="bg-rose-500 rounded-md px-4 py-2">
+        <BaseButton color="bg-orange-500">Edit</BaseButton>
+        <BaseButtonWIthEvent eventAction={deletePost} color="bg-rose-500">
           Delete
-        </button>
+        </BaseButtonWIthEvent>
       </div>
     </div>
   );
