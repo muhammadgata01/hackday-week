@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { formatDate } from '../../libs/helpers';
 
 function BaseCardContent({ content }) {
-  const { id, title, tag, snippet, created, updatedAt } = content;
+  const options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const { id, title, tag, snippet, createdAt, updatedAt } = content;
   return (
     <div className="mt-4 lg:col-span-1">
       <span>
-        {tag} &bull; {updatedAt}
+        {tag} &bull; {formatDate(updatedAt)}
       </span>
       <Link to={`articles/${id}`}>
         <h2 className="my-4">{title}</h2>

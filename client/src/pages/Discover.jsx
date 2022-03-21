@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { baseUrl } from '../libs/constants';
+import { baseUrl } from '../libs/helpers';
 
 import BaseCardLarge from '../components/base/BaseCardLarge';
 import BaseCardSmall from '../components/base/BaseCardSmall';

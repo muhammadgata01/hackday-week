@@ -1,8 +1,10 @@
 import React from 'react';
 
-function BaseButton({ children, color }) {
+function BaseButton({ children, type, color }) {
   return (
-    <button className={`${color} rounded-md px-4 py-2`}>{children}</button>
+    <button type={type} className={`${color} rounded-md px-4 py-2`}>
+      {children}
+    </button>
   );
 }
 

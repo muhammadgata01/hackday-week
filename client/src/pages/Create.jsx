@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { baseUrl } from '../libs/constants';
+import { Link } from 'react-router-dom';
+import { baseUrl } from '../libs/helpers';
 import BaseButton from '../components/base/BaseButton';
 
 function Create() {
@@ -82,9 +83,16 @@ function Create() {
               onChange={e => setImage(e.target.value)}
             />
           </div>
-          <BaseButton type="submit" color="bg-emerald-500">
-            Submit
-          </BaseButton>
+          <div className="flex gap-2">
+            <BaseButton type="submit" color="bg-emerald-500">
+              Submit
+            </BaseButton>
+            <Link to="/dashboard">
+              <BaseButton type="button" color="bg-neutral-500">
+                Back
+              </BaseButton>
+            </Link>
+          </div>
         </form>
       </div>
     </main>
