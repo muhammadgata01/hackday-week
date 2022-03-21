@@ -1,6 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
-  const Posts = sequelize.define('posts', {
+  // Mendefinisikan modal post, representasi dari tabel
+  const Post = sequelize.define('post', {
     title: {
+      // Mendefiniskan tipe data dari row
       type: DataTypes.STRING,
     },
     tag: {
@@ -17,5 +19,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  return Posts;
+  return Post;
 };

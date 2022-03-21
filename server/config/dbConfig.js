@@ -1,3 +1,4 @@
+// Define identity DB
 module.exports = {
   HOST: 'localhost',
   USER: 'irene',
