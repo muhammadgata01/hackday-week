@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Discover from './pages/Discover';
 import Create from './pages/Create';
+import Update from './pages/Update';
+
 import TheNavbar from './components/template/TheNavbar';
 import TheFooter from './components/template/TheFooter';
 import ArticlesDetail from './pages/ArticlesDetail';
@@ -17,6 +19,7 @@ function App() {
           <Route path="/articles/:id" element={<ArticlesDetail />}></Route>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/create" element={<Create />}></Route>
+          <Route path="/update/:id" element={<Update />}></Route>
         </Routes>
         <TheFooter />
       </div>
