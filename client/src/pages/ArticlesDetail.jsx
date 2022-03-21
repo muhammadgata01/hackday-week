@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { baseUrl } from '../libs/constants';
 
 function ArticlesDetail() {
   const [post, setPost] = useState({});
   const params = useParams();
 
   useEffect(() => {
-    const baseUrl = 'http://localhost:5000/v1/api';
     axios.get(`${baseUrl}/posts/${params.id}`).then(response => {
       setPost(response.data);
     });

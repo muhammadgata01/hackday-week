@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function BaseCardContent({ content }) {
-  const { id, title, tag, snippet } = content;
+  const { id, title, tag, snippet, created, updatedAt } = content;
   return (
     <div className="mt-4 lg:col-span-1">
-      <span>{tag} &bull; 12 Maret</span>
+      <span>
+        {tag} &bull; {updatedAt}
+      </span>
       <Link to={`articles/${id}`}>
         <h2 className="my-4">{title}</h2>
       </Link>

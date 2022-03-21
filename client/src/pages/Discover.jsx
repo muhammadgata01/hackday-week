@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../libs/constants';
+
 import BaseCardLarge from '../components/base/BaseCardLarge';
 import BaseCardSmall from '../components/base/BaseCardSmall';
 
@@ -7,8 +9,6 @@ function Discover() {
   const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {
-    const baseUrl = 'http://localhost:5000/v1/api';
-
     axios.get(`${baseUrl}/posts`).then(response => {
       setAllPosts(response.data);
     });

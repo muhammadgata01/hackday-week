@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { baseUrl } from '../libs/constants';
+
 import BaseCardDashboard from '../components/base/BaseCardDashboard';
 import BaseButton from '../components/base/BaseButton';
 
@@ -8,8 +10,6 @@ function Dashboard() {
   const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {
-    const baseUrl = 'http://localhost:5000/v1/api';
-
     axios.get(`${baseUrl}/posts`).then(response => {
       setAllPosts(response.data);
     });

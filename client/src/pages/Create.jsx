@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { baseUrl } from '../libs/constants';
+import BaseButton from '../components/base/BaseButton';
 
 function Create() {
   const [title, setTitle] = useState('');
@@ -12,7 +14,6 @@ function Create() {
     e.preventDefault();
     const postPost = { title, tag, snippet, body, image };
 
-    const baseUrl = 'http://localhost:5000/v1/api';
     axios.post(`${baseUrl}/posts`, postPost).then(() => {
       alert('Added successful');
       setTitle('');
@@ -81,9 +82,9 @@ function Create() {
               onChange={e => setImage(e.target.value)}
             />
           </div>
-          <button type="submit" className="px-4 py-2 bg-emerald-500 rounded-lg">
+          <BaseButton type="submit" color="bg-emerald-500">
             Submit
-          </button>
+          </BaseButton>
         </form>
       </div>
     </main>
