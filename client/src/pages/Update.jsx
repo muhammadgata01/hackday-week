@@ -35,7 +35,7 @@ function Create() {
 
   return (
     <main className="flex justify-center">
-      <div className="w-6/12">
+      <div className="w-10/12 lg:w-6/12">
         <h1 className="mb-6">Update Post</h1>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-2 mb-4">
