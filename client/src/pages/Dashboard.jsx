@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BaseCardDashboard from '../components/base/BaseCardDashboard';
+import BaseButton from '../components/base/BaseButton';
 
 function Dashboard() {
   const [allPosts, setAllPosts] = useState([]);
@@ -20,8 +21,8 @@ function Dashboard() {
         <div className="flex-between">
           <h1 className="mb-8">All Articles</h1>
           <div className="mb-10">
-            <Link to="/create" className="bg-blue-500 px-4 py-2 rounded-md">
-              Create Post
+            <Link to="/create">
+              <BaseButton color="bg-blue-500">Create Post</BaseButton>
             </Link>
           </div>
         </div>
