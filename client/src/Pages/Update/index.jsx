@@ -5,7 +5,7 @@ import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
 
-// Import from Component folder
+// Import from Components folder
 import CustomButton from '../../Components/CustomButton/CustomButton';
 
 const Update = () => {

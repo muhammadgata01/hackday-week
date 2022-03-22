@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+// Handle api
 import axios from 'axios';
+import { baseUrl } from '../../Services/Constants';
+
+// Import from Components folder
 import CustomButton from '../CustomButton/CustomButton';
 import CustomButtonWIthEvent from '../CustomButtonWithEvent/CustomButtonWIthEvent';
-import { Link } from 'react-router-dom';
-import { baseUrl } from '../../Services/Constants';
 
 const CustomCardDashboard = ({ data }) => {
   const { id, title } = data;

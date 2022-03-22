@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// Import from /Services/Utils
 import dateFormat from '../../Services/Utils/dateFormat';
 
 const CustomCardContent = ({ content }) => {

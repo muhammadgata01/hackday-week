@@ -1,4 +1,6 @@
 import React from 'react';
+
+// Import from Components folder
 import CustomCardContent from '../CustomCardContent/CustomCardContent';
 
 const CustomCardSmall = ({ data }) => {
