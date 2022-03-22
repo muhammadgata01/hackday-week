@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function TheNavbar() {
+const Header = () => {
   return (
     <nav className="py-8">
       <div className="flex-between">
@@ -24,6 +24,6 @@ function TheNavbar() {
       </div>
     </nav>
   );
-}
+};
 
-export default TheNavbar;
+export default Header;

@@ -1,6 +1,4 @@
-export const baseUrl = 'http://localhost:5000/v1/api';
-
-export function formatDate(date) {
+const dateFormat = date => {
   const options = {
     weekday: 'long',
     year: 'numeric',
@@ -9,4 +7,6 @@ export function formatDate(date) {
   };
   const result = new Date(date).toLocaleDateString('id-ID', options);
   return result;
-}
+};
+
+export default dateFormat;

@@ -1,7 +1,7 @@
 import React from 'react';
-import BaseCardContent from './BaseCardContent';
+import CustomCardContent from '../CustomCardContent/CustomCardContent';
 
-function BaseCardSmall({ data }) {
+const CustomCardSmall = ({ data }) => {
   return (
     <article className="w-full">
       <figure>
@@ -12,9 +12,9 @@ function BaseCardSmall({ data }) {
         />
       </figure>
 
-      <BaseCardContent content={data} />
+      <CustomCardContent content={data} />
     </article>
   );
-}
+};
 
-export default BaseCardSmall;
+export default CustomCardSmall;

@@ -1,42 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import axios from 'axios';
-import { baseUrl } from '../libs/helpers';
-import BaseButton from '../components/base/BaseButton';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-function Create() {
+// Handle api
+import axios from 'axios';
+import { baseUrl } from '../../Services/Constants';
+
+// Import from Components folder
+import CustomButton from '../../Components/CustomButton/CustomButton';
+
+const Create = () => {
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
   const [snippet, setSnippet] = useState('');
   const [body, setBody] = useState('');
   const [image, setImage] = useState('');
 
-  const params = useParams();
-
-  useEffect(() => {
-    axios.get(`${baseUrl}/posts/${params.id}`).then(response => {
-      const result = response.data;
-      setTitle(result.title);
-      setTag(result.tag);
-      setSnippet(result.snippet);
-      setBody(result.body);
-      setImage(result.image);
-    });
-  }, []);
-
   const handleSubmit = e => {
     e.preventDefault();
     const postPost = { title, tag, snippet, body, image };
 
-    axios.put(`${baseUrl}/posts/${params.id}`, postPost).then(() => {
-      alert('Update successful');
+    axios.post(`${baseUrl}/posts`, postPost).then(() => {
+      alert('Added successful');
+      setTitle('');
+      setTag('');
+      setSnippet('');
+      setBody('');
+      setImage('');
     });
   };
 
   return (
     <main className="flex justify-center">
       <div className="w-10/12 lg:w-6/12">
-        <h1 className="mb-6">Update Post</h1>
+        <h1 className="mb-6">Create Post</h1>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-2 mb-4">
             <label htmlFor="title">Title</label>
@@ -92,19 +88,19 @@ function Create() {
             />
           </div>
           <div className="flex gap-2">
-            <BaseButton type="submit" color="bg-emerald-500">
+            <CustomButton type="submit" color="bg-emerald-500">
               Submit
-            </BaseButton>
+            </CustomButton>
             <Link to="/dashboard">
-              <BaseButton type="button" color="bg-neutral-500">
+              <CustomButton type="button" color="bg-neutral-500">
                 Back
-              </BaseButton>
+              </CustomButton>
             </Link>
           </div>
         </form>
       </div>
     </main>
   );
-}
+};
 
 export default Create;

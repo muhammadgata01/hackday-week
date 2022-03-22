@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { baseUrl, formatDate } from '../libs/helpers';
 
-function ArticlesDetail() {
+// Handle api
+import axios from 'axios';
+import { baseUrl } from '../../Services/Constants';
+
+// Import from Services/Utils folder
+import dateFormat from '../../Services/Utils/dateFormat';
+
+const ArticlesDetail = () => {
   const [post, setPost] = useState({});
   const params = useParams();
 
@@ -17,7 +22,7 @@ function ArticlesDetail() {
     <article className="flex flex-col gap-12 py-10">
       <div className="flex flex-col items-center">
         <span>
-          {post.tag} &bull; {formatDate(post.updatedAt)}
+          {post.tag} &bull; {dateFormat(post.updatedAt)}
         </span>
         <h2 className="my-4 w-10/12 text-center lg:w-6/12">{post.title}</h2>
         <div className="flex items-center gap-4">
@@ -46,6 +51,6 @@ function ArticlesDetail() {
       </div>
     </article>
   );
-}
+};
 
 export default ArticlesDetail;
