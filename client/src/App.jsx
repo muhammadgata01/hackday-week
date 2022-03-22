@@ -12,7 +12,7 @@ import Update from './Pages/Update';
 import Header from './Layouts/Header';
 import Footer from './Layouts/Footer';
 
-function App() {
+const App = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-dark-600 to-dark-800 text-lg text-white antialiased">
       <div className="container">
@@ -28,6 +28,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

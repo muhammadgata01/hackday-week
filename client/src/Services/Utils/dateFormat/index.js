@@ -1,4 +1,4 @@
-function dateFormat(date) {
+const dateFormat = date => {
   const options = {
     weekday: 'long',
     year: 'numeric',
@@ -7,6 +7,6 @@ function dateFormat(date) {
   };
   const result = new Date(date).toLocaleDateString('id-ID', options);
   return result;
-}
+};
 
 export default dateFormat;

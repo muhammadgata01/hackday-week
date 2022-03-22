@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+const Footer = () => {
   return (
     <footer className="py-16 text-center">
       <span>
@@ -8,6 +8,6 @@ function Footer() {
       </span>
     </footer>
   );
-}
+};
 
 export default Footer;

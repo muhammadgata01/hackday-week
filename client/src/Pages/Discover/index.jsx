@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
+
+// Handle api
 import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
 
+// Import from Components folder
 import CustomCardLarge from '../../Components/CustomCardLarge/CustomCardLarge';
 import CustomCardSmall from '../../Components/CustomCardSmall/CustomCardSmall';
 
-function Discover() {
+const Discover = () => {
   const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {
@@ -28,6 +31,6 @@ function Discover() {
       </section>
     </main>
   );
-}
+};
 
 export default Discover;

@@ -1,7 +1,7 @@
 import React from 'react';
 import CustomCardContent from '../CustomCardContent/CustomCardContent';
 
-function CustomCardLarge({ data }) {
+const CustomCardLarge = ({ data }) => {
   return (
     <article className="grid gap-8 lg:grid-cols-3">
       <figure className="lg:col-span-2">
@@ -14,6 +14,6 @@ function CustomCardLarge({ data }) {
       <CustomCardContent content={data} />
     </article>
   );
-}
+};
 
 export default CustomCardLarge;

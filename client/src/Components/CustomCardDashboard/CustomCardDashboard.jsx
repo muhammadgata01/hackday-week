@@ -3,19 +3,19 @@ import axios from 'axios';
 import CustomButton from '../CustomButton/CustomButton';
 import CustomButtonWIthEvent from '../CustomButtonWithEvent/CustomButtonWIthEvent';
 import { Link } from 'react-router-dom';
+import { baseUrl } from '../../Services/Constants';
 
-function CustomCardDashboard({ data }) {
+const CustomCardDashboard = ({ data }) => {
   const { id, title } = data;
 
-  function deletePost() {
+  const deletePost = () => {
     const result = confirm(`Are you sure delete data ${id}`);
     if (result) {
-      const baseUrl = 'http://localhost:5000/v1/api';
       axios
         .delete(`${baseUrl}/posts/${id}`)
         .then(() => alert('Delete successful !'));
     }
-  }
+  };
 
   return (
     <div className="p-4 bg-dark-500 rounded-lg">
@@ -30,6 +30,6 @@ function CustomCardDashboard({ data }) {
       </div>
     </div>
   );
-}
+};
 
 export default CustomCardDashboard;

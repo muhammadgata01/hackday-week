@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Header() {
+const Header = () => {
   return (
     <nav className="py-8">
       <div className="flex-between">
@@ -24,6 +24,6 @@ function Header() {
       </div>
     </nav>
   );
-}
+};
 
 export default Header;

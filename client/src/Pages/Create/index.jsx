@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+
+// Handle api
+import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
+
+// Import from Components folder
 import CustomButton from '../../Components/CustomButton/CustomButton';
 
-function Create() {
+const Create = () => {
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
   const [snippet, setSnippet] = useState('');
@@ -97,6 +101,6 @@ function Create() {
       </div>
     </main>
   );
-}
+};
 
 export default Create;

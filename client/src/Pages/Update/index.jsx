@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+
+// Handle api
 import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
+
+// Import from Component folder
 import CustomButton from '../../Components/CustomButton/CustomButton';
 
-function Update() {
+const Update = () => {
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
   const [snippet, setSnippet] = useState('');
@@ -105,6 +109,6 @@ function Update() {
       </div>
     </main>
   );
-}
+};
 
 export default Update;

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
+// Handle api
+import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
 
+// Import from Components folder
 import CustomCardDashboard from '../../Components/CustomCardDashboard/CustomCardDashboard';
 import CustomButton from '../../Components/CustomButton/CustomButton';
 
-function Dashboard() {
+const Dashboard = () => {
   const [allPosts, setAllPosts] = useState([]);
 
   useEffect(() => {
@@ -33,6 +35,6 @@ function Dashboard() {
       </section>
     </main>
   );
-}
+};
 
 export default Dashboard;

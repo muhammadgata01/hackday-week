@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import dateFormat from '../../Services/Utils/dateFormat';
 
-function CustomCardContent({ content }) {
+const CustomCardContent = ({ content }) => {
   const { id, title, tag, snippet, createdAt, updatedAt } = content;
   return (
     <div className="mt-4 lg:col-span-1">
@@ -28,6 +28,6 @@ function CustomCardContent({ content }) {
       </div>
     </div>
   );
-}
+};
 
 export default CustomCardContent;

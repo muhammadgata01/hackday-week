@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
+// Handle api
 import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
+
+// Import from Services/Utils folder
 import dateFormat from '../../Services/Utils/dateFormat';
 
-function ArticlesDetail() {
+const ArticlesDetail = () => {
   const [post, setPost] = useState({});
   const params = useParams();
 
@@ -47,6 +51,6 @@ function ArticlesDetail() {
       </div>
     </article>
   );
-}
+};
 
 export default ArticlesDetail;
