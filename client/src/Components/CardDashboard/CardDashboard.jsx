@@ -6,10 +6,9 @@ import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
 
 // Import from Components folder
-import CustomButton from '../CustomButton/CustomButton';
-import CustomButtonWIthEvent from '../CustomButtonWithEvent/CustomButtonWIthEvent';
+import Button from '../Button/Button';
 
-const CustomCardDashboard = ({ data }) => {
+const CardDashboard = ({ data }) => {
   const { id, title } = data;
 
   const deletePost = () => {
@@ -26,14 +25,14 @@ const CustomCardDashboard = ({ data }) => {
       <h2 className="mb-8">{title}</h2>
       <div className="flex gap-2">
         <Link to={`/update/${id}`}>
-          <CustomButton color="bg-orange-500">Edit</CustomButton>
+          <Button color="bg-orange-500">Edit</Button>
         </Link>
-        <CustomButtonWIthEvent eventAction={deletePost} color="bg-rose-500">
+        <Button type="submit" color="bg-rose-500" eventAction={deletePost}>
           Delete
-        </CustomButtonWIthEvent>
+        </Button>
       </div>
     </div>
   );
 };
 
-export default CustomCardDashboard;
+export default CardDashboard;

@@ -1,8 +1,9 @@
 import React from 'react';
 
-const CustomButtonWIthEvent = ({ children, color, eventAction }) => {
+const Button = ({ children, type = 'button', color, eventAction = null }) => {
   return (
     <button
+      type={type}
       className={`${color} rounded-md px-4 py-2`}
       onClick={() => eventAction()}>
       {children}
@@ -10,4 +11,4 @@ const CustomButtonWIthEvent = ({ children, color, eventAction }) => {
   );
 };
 
-export default CustomButtonWIthEvent;
+export default Button;

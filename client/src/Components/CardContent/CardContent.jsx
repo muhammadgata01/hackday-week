@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // Import from /Services/Utils
 import dateFormat from '../../Services/Utils/dateFormat';
 
-const CustomCardContent = ({ content }) => {
+const CardContent = ({ content }) => {
   const { id, title, tag, snippet, createdAt, updatedAt } = content;
   return (
     <div className="mt-4 lg:col-span-1">
@@ -32,4 +32,4 @@ const CustomCardContent = ({ content }) => {
   );
 };
 
-export default CustomCardContent;
+export default CardContent;

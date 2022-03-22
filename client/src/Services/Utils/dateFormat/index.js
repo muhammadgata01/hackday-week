@@ -5,7 +5,7 @@ const dateFormat = date => {
     month: 'long',
     day: 'numeric',
   };
-  const result = new Date(date).toLocaleDateString('id-ID', options);
+  const result = new Date(date).toLocaleDateString('en-EN', options);
   return result;
 };
 

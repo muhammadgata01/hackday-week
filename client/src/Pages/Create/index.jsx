@@ -6,7 +6,7 @@ import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
 
 // Import from Components folder
-import CustomButton from '../../Components/CustomButton/CustomButton';
+import Button from '../../Components/Button/Button';
 
 const Create = () => {
   const [title, setTitle] = useState('');
@@ -88,13 +88,11 @@ const Create = () => {
             />
           </div>
           <div className="flex gap-2">
-            <CustomButton type="submit" color="bg-emerald-500">
+            <Button type="submit" color="bg-emerald-500">
               Submit
-            </CustomButton>
+            </Button>
             <Link to="/dashboard">
-              <CustomButton type="button" color="bg-neutral-500">
-                Back
-              </CustomButton>
+              <Button color="bg-neutral-500">Back</Button>
             </Link>
           </div>
         </form>
