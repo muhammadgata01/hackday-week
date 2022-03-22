@@ -1,19 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { formatDate } from '../../libs/helpers';
+import dateFormat from '../../Services/Utils/dateFormat';
 
-function BaseCardContent({ content }) {
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
+function CustomCardContent({ content }) {
   const { id, title, tag, snippet, createdAt, updatedAt } = content;
   return (
     <div className="mt-4 lg:col-span-1">
       <span>
-        {tag} &bull; {formatDate(updatedAt)}
+        {tag} &bull; {dateFormat(updatedAt)}
       </span>
       <Link to={`articles/${id}`}>
         <h2 className="my-4">{title}</h2>
@@ -36,4 +30,4 @@ function BaseCardContent({ content }) {
   );
 }
 
-export default BaseCardContent;
+export default CustomCardContent;

@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import BaseButton from './BaseButton';
-import BaseButtonWIthEvent from './BaseButtonWIthEvent';
+import CustomButton from '../CustomButton/CustomButton';
+import CustomButtonWIthEvent from '../CustomButtonWithEvent/CustomButtonWIthEvent';
 import { Link } from 'react-router-dom';
 
-function BaseCardDashboard({ data }) {
+function CustomCardDashboard({ data }) {
   const { id, title } = data;
 
   function deletePost() {
@@ -22,14 +22,14 @@ function BaseCardDashboard({ data }) {
       <h2 className="mb-8">{title}</h2>
       <div className="flex gap-2">
         <Link to={`/update/${id}`}>
-          <BaseButton color="bg-orange-500">Edit</BaseButton>
+          <CustomButton color="bg-orange-500">Edit</CustomButton>
         </Link>
-        <BaseButtonWIthEvent eventAction={deletePost} color="bg-rose-500">
+        <CustomButtonWIthEvent eventAction={deletePost} color="bg-rose-500">
           Delete
-        </BaseButtonWIthEvent>
+        </CustomButtonWIthEvent>
       </div>
     </div>
   );
 }
 
-export default BaseCardDashboard;
+export default CustomCardDashboard;

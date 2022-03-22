@@ -1,7 +1,7 @@
 import React from 'react';
-import BaseCardContent from './BaseCardContent';
+import CustomCardContent from '../CustomCardContent/CustomCardContent';
 
-function BaseCardLarge({ data }) {
+function CustomCardLarge({ data }) {
   return (
     <article className="grid gap-8 lg:grid-cols-3">
       <figure className="lg:col-span-2">
@@ -11,9 +11,9 @@ function BaseCardLarge({ data }) {
           alt="Image Card"
         />
       </figure>
-      <BaseCardContent content={data} />
+      <CustomCardContent content={data} />
     </article>
   );
 }
 
-export default BaseCardLarge;
+export default CustomCardLarge;

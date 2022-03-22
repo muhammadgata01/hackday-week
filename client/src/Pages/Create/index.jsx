@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { baseUrl } from '../libs/helpers';
-import BaseButton from '../components/base/BaseButton';
+import { baseUrl } from '../../Services/Constants';
+import CustomButton from '../../Components/CustomButton/CustomButton';
 
 function Create() {
   const [title, setTitle] = useState('');
@@ -84,13 +84,13 @@ function Create() {
             />
           </div>
           <div className="flex gap-2">
-            <BaseButton type="submit" color="bg-emerald-500">
+            <CustomButton type="submit" color="bg-emerald-500">
               Submit
-            </BaseButton>
+            </CustomButton>
             <Link to="/dashboard">
-              <BaseButton type="button" color="bg-neutral-500">
+              <CustomButton type="button" color="bg-neutral-500">
                 Back
-              </BaseButton>
+              </CustomButton>
             </Link>
           </div>
         </form>

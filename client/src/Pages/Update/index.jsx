@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import { baseUrl } from '../libs/helpers';
-import BaseButton from '../components/base/BaseButton';
+import { baseUrl } from '../../Services/Constants';
+import CustomButton from '../../Components/CustomButton/CustomButton';
 
-function Create() {
+function Update() {
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
   const [snippet, setSnippet] = useState('');
@@ -92,13 +92,13 @@ function Create() {
             />
           </div>
           <div className="flex gap-2">
-            <BaseButton type="submit" color="bg-emerald-500">
+            <CustomButton type="submit" color="bg-emerald-500">
               Submit
-            </BaseButton>
+            </CustomButton>
             <Link to="/dashboard">
-              <BaseButton type="button" color="bg-neutral-500">
+              <CustomButton type="button" color="bg-neutral-500">
                 Back
-              </BaseButton>
+              </CustomButton>
             </Link>
           </div>
         </form>
@@ -107,4 +107,4 @@ function Create() {
   );
 }
 
-export default Create;
+export default Update;
