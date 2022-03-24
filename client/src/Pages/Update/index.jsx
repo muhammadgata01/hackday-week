@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 
 // Handle api
 import axios from 'axios';
@@ -9,6 +9,8 @@ import { baseUrl } from '../../Services/Constants';
 import Button from '../../Components/Button/Button';
 
 const Update = () => {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
   const [snippet, setSnippet] = useState('');
@@ -34,6 +36,7 @@ const Update = () => {
 
     axios.put(`${baseUrl}/posts/${params.id}`, postPost).then(() => {
       alert('Update successful');
+      navigate('/dashboard');
     });
   };
 

@@ -38,8 +38,8 @@ const ArticlesDetail = () => {
       </div>
       <figure className="flex justify-center">
         <img
-          src={`/images/${post.image}`}
-          className="h-[26rem] w-full lg:w-8/12"
+          src={post.image}
+          className="h-[26rem] w-full lg:w-8/12 rounded-xl"
           alt="Image Detail"
         />
       </figure>

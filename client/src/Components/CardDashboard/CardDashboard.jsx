@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Handle api
 import axios from 'axios';
@@ -9,14 +9,16 @@ import { baseUrl } from '../../Services/Constants';
 import Button from '../Button/Button';
 
 const CardDashboard = ({ data }) => {
+  const navigate = useNavigate();
   const { id, title } = data;
 
   const deletePost = () => {
     const result = confirm(`Are you sure delete data ${id}`);
     if (result) {
-      axios
-        .delete(`${baseUrl}/posts/${id}`)
-        .then(() => alert('Delete successful !'));
+      axios.delete(`${baseUrl}/posts/${id}`).then(() => {
+        alert('Delete successful !');
+        navigate('/');
+      });
     }
   };
 

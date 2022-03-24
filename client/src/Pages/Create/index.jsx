@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Handle api
 import axios from 'axios';
@@ -9,6 +9,8 @@ import { baseUrl } from '../../Services/Constants';
 import Button from '../../Components/Button/Button';
 
 const Create = () => {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState('');
   const [tag, setTag] = useState('');
   const [snippet, setSnippet] = useState('');
@@ -26,6 +28,7 @@ const Create = () => {
       setSnippet('');
       setBody('');
       setImage('');
+      navigate('/dashboard');
     });
   };
 
