@@ -5,7 +5,7 @@ const Button = ({ children, type = 'button', color, eventAction = null }) => {
     <button
       type={type}
       className={`${color} rounded-md px-4 py-2`}
-      onClick={() => eventAction()}>
+      onClick={eventAction}>
       {children}
     </button>
   );

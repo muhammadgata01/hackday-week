@@ -7,27 +7,33 @@ import { baseUrl } from '../../Services/Constants';
 
 // Import from Components folder
 import Button from '../../Components/Button/Button';
+import Input from '../../Components/Input/Input';
+import Textarea from '../../Components/Textarea/Textarea';
 
 const Create = () => {
   const navigate = useNavigate();
 
-  const [title, setTitle] = useState('');
-  const [tag, setTag] = useState('');
-  const [snippet, setSnippet] = useState('');
-  const [body, setBody] = useState('');
-  const [image, setImage] = useState('');
+  const [form, setForm] = useState({
+    title: '',
+    tag: '',
+    snippet: '',
+    body: '',
+    image: '',
+  });
 
   const handleSubmit = e => {
     e.preventDefault();
-    const postPost = { title, tag, snippet, body, image };
 
-    axios.post(`${baseUrl}/posts`, postPost).then(() => {
+    axios.post(`${baseUrl}/posts`, form).then(() => {
       alert('Added successful');
-      setTitle('');
-      setTag('');
-      setSnippet('');
-      setBody('');
-      setImage('');
+      setForm({
+        title: '',
+        tag: '',
+        snippet: '',
+        body: '',
+        image: '',
+      });
+
       navigate('/dashboard');
     });
   };
@@ -37,59 +43,40 @@ const Create = () => {
       <div className="w-10/12 lg:w-6/12">
         <h1 className="mb-6">Create Post</h1>
         <form onSubmit={handleSubmit}>
-          <div className="grid gap-2 mb-4">
-            <label htmlFor="title">Title</label>
-            <input
-              type="text"
-              id="title"
-              className="input-style"
-              placeholder="Insert title"
-              value={title}
-              onChange={e => setTitle(e.target.value)}
-            />
-          </div>
-          <div className="grid gap-2 mb-4">
-            <label htmlFor="tag">Tag</label>
-            <input
-              type="text"
-              id="tag"
-              className="input-style"
-              placeholder="Insert tag"
-              value={tag}
-              onChange={e => setTag(e.target.value)}
-            />
-          </div>
-          <div className="grid gap-2 mb-4">
-            <label htmlFor="snippet">Snippet</label>
-            <textarea
-              id="snippet"
-              rows="2"
-              className="input-style"
-              placeholder="Insert snippet"
-              value={snippet}
-              onChange={e => setSnippet(e.target.value)}></textarea>
-          </div>
-          <div className="grid gap-2 mb-4">
-            <label htmlFor="body">Body</label>
-            <textarea
-              id="body"
-              rows="6"
-              className="input-style"
-              placeholder="Insert body"
-              value={body}
-              onChange={e => setBody(e.target.value)}></textarea>
-          </div>
-          <div className="grid gap-2 mb-4">
-            <label htmlFor="image">Image</label>
-            <input
-              type="text"
-              id="image"
-              className="input-style"
-              placeholder="Insert image"
-              value={image}
-              onChange={e => setImage(e.target.value)}
-            />
-          </div>
+          <Input
+            valueLabel="Title"
+            valueInput={form.title}
+            onInputChange={e => setForm({ ...form, title: e.target.value })}
+          />
+
+          <Input
+            valueLabel="Tag"
+            valueInput={form.tag}
+            onInputChange={e => setForm({ ...form, tag: e.target.value })}
+          />
+
+          <Textarea
+            valueLabel="Snippet"
+            valueRow="3"
+            valueTextarea={form.snippet}
+            onTextareaChange={e =>
+              setForm({ ...form, snippet: e.target.value })
+            }
+          />
+
+          <Textarea
+            valueLabel="Body"
+            valueRow="6"
+            valueTextarea={form.body}
+            onTextareaChange={e => setForm({ ...form, body: e.target.value })}
+          />
+
+          <Input
+            valueLabel="Image"
+            valueInput={form.image}
+            onInputChange={e => setForm({ ...form, image: e.target.value })}
+          />
+
           <div className="flex gap-2">
             <Button type="submit" color="bg-emerald-500">
               Submit
