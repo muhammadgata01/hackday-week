@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react';
-
-// Handle api
-import axios from 'axios';
-import { baseUrl } from '../../Services/Constants';
-
-// Import from Components folder
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllPosts } from '../../store/Actions/PostActions';
 import Card from '../../Components/Card/Card';
 
 const Discover = () => {
-  const [allPosts, setAllPosts] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get(`${baseUrl}/posts`).then(response => {
-      setAllPosts(response.data);
-    });
+    dispatch(getAllPosts());
   }, []);
+
+  const allPosts = useSelector(state => state.Post.posts);
 
   return (
     <main>

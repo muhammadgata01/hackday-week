@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getOnePosts } from '../../store/Actions/PostActions';
 import { useParams } from 'react-router-dom';
 
-// Handle api
-import axios from 'axios';
-import { baseUrl } from '../../Services/Constants';
-
-// Import from Services/Utils folder
 import dateFormat from '../../Services/Utils/dateFormat';
 
 const ArticlesDetail = () => {
-  const [post, setPost] = useState({});
+  const dispatch = useDispatch();
   const params = useParams();
 
   useEffect(() => {
-    axios.get(`${baseUrl}/posts/${params.id}`).then(response => {
-      setPost(response.data);
-    });
+    dispatch(getOnePosts(params.id));
   }, []);
+
+  const post = useSelector(state => state.Post.post);
 
   return (
     <article className="flex flex-col gap-12 py-10">

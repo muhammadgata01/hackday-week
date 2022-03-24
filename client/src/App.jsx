@@ -1,16 +1,17 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import store from './store';
 
-// Import from Routes file
 import RoutesComp from './routes';
-
-// Import from Layout folder
 import Main from './Layouts/Main';
 
 const App = () => {
   return (
-    <Main>
-      <RoutesComp />
-    </Main>
+    <Provider store={store}>
+      <Main>
+        <RoutesComp />
+      </Main>
+    </Provider>
   );
 };
 

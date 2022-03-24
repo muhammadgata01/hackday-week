@@ -1,8 +1,8 @@
 // Define identity DB
 module.exports = {
-  HOST: 'localhost',
-  USER: 'irene',
-  PASS: 'irene01',
-  DB: 'simple-posts',
-  dialect: 'mysql',
+  HOST: "localhost",
+  USER: "refactory",
+  PASS: "refactory01",
+  DB: "simple-posts",
+  dialect: "mysql",
 };
