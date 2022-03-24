@@ -1,13 +1,13 @@
 import React from 'react';
 import CardContent from '../CardContent/CardContent';
 
-const Card = ({ data, size }) => {
+const Card = ({ data, isLarge }) => {
   return (
-    <article className={size === 'large' ? 'grid gap-8 lg:grid-cols-3' : ''}>
-      <figure className={size === 'large' ? 'lg:col-span-2' : ''}>
+    <article className={isLarge ? 'grid gap-8 lg:grid-cols-3' : ''}>
+      <figure className={isLarge ? 'lg:col-span-2' : ''}>
         <img
           src={`/images/${data.image}`}
-          className={size === 'large' ? 'h-[26rem] w-full' : 'h-auto '}
+          className={isLarge ? 'h-[26rem] w-full' : 'h-auto '}
           alt="Card"
         />
       </figure>

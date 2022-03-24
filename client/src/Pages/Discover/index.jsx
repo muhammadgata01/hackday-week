@@ -20,7 +20,7 @@ const Discover = () => {
     <main>
       <div className="py-4">
         {allPosts.slice(0, 1).map(post => {
-          return <Card key={post.id} data={post} size="large" />;
+          return <Card key={post.id} data={post} isLarge={true} />;
         })}
       </div>
       <section className="grid gap-x-8 gap-y-16 py-16 sm:grid-cols-2 lg:grid-cols-3">
