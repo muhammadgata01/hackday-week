@@ -1,7 +1,6 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-// Import from Pages folder
+// Pages
 import Discover from './Pages/Discover';
 import ArticlesDetail from './Pages/ArticlesDetail';
 import Dashboard from './Pages/Dashboard';

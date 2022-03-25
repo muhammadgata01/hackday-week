@@ -1,11 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Import from /Services/Utils
+// Utils
 import dateFormat from '../../Services/Utils/dateFormat';
 
 const CardContent = ({ content }) => {
-  const { id, title, tag, snippet, createdAt, updatedAt } = content;
+  const { id, title, tag, snippet, updatedAt } = content;
   return (
     <div className="mt-4 lg:col-span-1">
       <span>

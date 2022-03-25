@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllPosts } from '../../store/Actions/PostActions';
+
+// Components
 import Card from '../../Components/Card/Card';
+import { getAllPosts } from '../../store/Actions/PostActions';
 
 const Discover = () => {
   const dispatch = useDispatch();

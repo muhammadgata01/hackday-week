@@ -1,6 +1,4 @@
-import React from 'react';
-
-// Import from Layouts folder
+// Layouts
 import Header from '../Header';
 import Footer from '../Footer';
 

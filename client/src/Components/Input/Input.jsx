@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Input = ({ valueLabel, valueInput, onInputChange }) => {
   return (
     <div className="grid gap-2 mb-4">
