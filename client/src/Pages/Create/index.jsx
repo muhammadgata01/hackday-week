@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Handle api
 import axios from 'axios';
@@ -9,9 +9,10 @@ import { baseUrl } from '../../Services/Constants';
 import Button from '../../Components/Button/Button';
 import Input from '../../Components/Input/Input';
 import Textarea from '../../Components/Textarea/Textarea';
+import Modal from '../../Components/Modal/Modal';
 
 const Create = () => {
-  const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const [form, setForm] = useState({
     title: '',
@@ -25,7 +26,7 @@ const Create = () => {
     e.preventDefault();
 
     axios.post(`${baseUrl}/posts`, form).then(() => {
-      alert('Added successful');
+      setModalOpen(true);
       setForm({
         title: '',
         tag: '',
@@ -33,13 +34,15 @@ const Create = () => {
         body: '',
         image: '',
       });
-
-      navigate('/dashboard');
     });
   };
 
   return (
     <main className="flex justify-center">
+      {modalOpen && (
+        <Modal setOpenModal={setModalOpen} message="Successfuly add post !" />
+      )}
+
       <div className="w-10/12 lg:w-6/12">
         <h1 className="mb-6">Create Post</h1>
         <form onSubmit={handleSubmit}>

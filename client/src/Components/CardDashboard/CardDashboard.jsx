@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Handle api
 import axios from 'axios';
@@ -7,23 +7,29 @@ import { baseUrl } from '../../Services/Constants';
 
 // Import from Components folder
 import Button from '../Button/Button';
+import Modal from '../Modal/Modal';
 
 const CardDashboard = ({ data }) => {
-  const navigate = useNavigate();
   const { id, title } = data;
+  const [modalOpen, setModalOpen] = useState(false);
 
   const deletePost = () => {
     const result = confirm(`Are you sure delete data ${id}`);
     if (result) {
       axios.delete(`${baseUrl}/posts/${id}`).then(() => {
-        alert('Delete successful !');
-        navigate('/');
+        setModalOpen(true);
       });
     }
   };
 
   return (
     <div className="p-4 bg-dark-500 rounded-lg">
+      {modalOpen && (
+        <Modal
+          setOpenModal={setModalOpen}
+          message="Successfuly delete post !"
+        />
+      )}
       <h2 className="mb-8">{title}</h2>
       <div className="flex gap-2">
         <Link to={`/update/${id}`}>
