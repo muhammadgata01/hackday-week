@@ -11,6 +11,7 @@ const Input = ({ valueLabel, valueInput, onInputChange }) => {
         placeholder={`Insert ${valueLabel}`}
         value={valueInput}
         onChange={onInputChange}
+        required
       />
     </div>
   );

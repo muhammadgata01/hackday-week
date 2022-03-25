@@ -1,21 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-// Handle api
-import axios from 'axios';
-import { baseUrl } from '../../Services/Constants';
 
 // Import from Components folder
 import CardDashboard from '../../Components/CardDashboard/CardDashboard';
 import Button from '../../Components/Button/Button';
+import { getAllPosts } from '../../store/Actions/PostActions';
 
 const Dashboard = () => {
-  const [allPosts, setAllPosts] = useState([]);
+  const dispatch = useDispatch();
+  const allPosts = useSelector(state => state.Post.posts);
 
   useEffect(() => {
-    axios.get(`${baseUrl}/posts`).then(response => {
-      setAllPosts(response.data);
-    });
+    dispatch(getAllPosts());
   }, []);
 
   return (

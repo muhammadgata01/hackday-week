@@ -5,12 +5,11 @@ import Card from '../../Components/Card/Card';
 
 const Discover = () => {
   const dispatch = useDispatch();
+  const allPosts = useSelector(state => state.Post.posts);
 
   useEffect(() => {
     dispatch(getAllPosts());
   }, []);
-
-  const allPosts = useSelector(state => state.Post.posts);
 
   return (
     <main>

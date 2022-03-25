@@ -15,7 +15,8 @@ const Textarea = ({
         className="input-style"
         placeholder={`Insert ${valueLabel}`}
         value={valueTextarea}
-        onChange={onTextareaChange}></textarea>
+        onChange={onTextareaChange}
+        required></textarea>
     </div>
   );
 };
