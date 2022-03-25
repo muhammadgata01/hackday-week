@@ -1,6 +1,7 @@
-import React from 'react';
-import Button from '../Button/Button';
 import { useNavigate } from 'react-router-dom';
+
+// Components
+import Button from '../Button/Button';
 
 const Modal = ({ setOpenModal, message }) => {
   const navigate = useNavigate();

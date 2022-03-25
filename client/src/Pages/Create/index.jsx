@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-// Handle api
+// Api
 import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
 
-// Import from Components folder
+// Components
 import Button from '../../Components/Button/Button';
 import Input from '../../Components/Input/Input';
 import Textarea from '../../Components/Textarea/Textarea';

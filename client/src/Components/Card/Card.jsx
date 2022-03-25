@@ -1,4 +1,3 @@
-import React from 'react';
 import CardContent from '../CardContent/CardContent';
 
 const Card = ({ data, isLarge }) => {

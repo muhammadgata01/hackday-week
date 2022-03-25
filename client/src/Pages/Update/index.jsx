@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-// Handle api
+// Api
 import axios from 'axios';
 import { baseUrl } from '../../Services/Constants';
 
-// Import from Components folder
+// Components
 import Button from '../../Components/Button/Button';
 import Input from '../../Components/Input/Input';
 import Textarea from '../../Components/Textarea/Textarea';
 import Modal from '../../Components/Modal/Modal';
 
 const Update = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-
   const params = useParams();
+
+  const [modalOpen, setModalOpen] = useState(false);
 
   const [form, setForm] = useState({
     title: '',

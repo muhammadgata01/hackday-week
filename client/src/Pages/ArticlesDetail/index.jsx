@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getOnePosts } from '../../store/Actions/PostActions';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
+// Components
+import { getOnePosts } from '../../store/Actions/PostActions';
+
+// Utils
 import dateFormat from '../../Services/Utils/dateFormat';
 
 const ArticlesDetail = () => {
   const dispatch = useDispatch();
   const params = useParams();
+  const post = useSelector(state => state.Post.post);
 
   useEffect(() => {
     dispatch(getOnePosts(params.id));
   }, []);
-
-  const post = useSelector(state => state.Post.post);
 
   return (
     <article className="flex flex-col gap-12 py-10">
