@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 // Handle api
 import axios from 'axios';
@@ -9,9 +9,11 @@ import { baseUrl } from '../../Services/Constants';
 import Button from '../../Components/Button/Button';
 import Input from '../../Components/Input/Input';
 import Textarea from '../../Components/Textarea/Textarea';
+import Modal from '../../Components/Modal/Modal';
 
 const Update = () => {
-  const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
+
   const params = useParams();
 
   const [form, setForm] = useState({
@@ -39,13 +41,20 @@ const Update = () => {
     e.preventDefault();
 
     axios.put(`${baseUrl}/posts/${params.id}`, form).then(() => {
-      alert('Update successful');
+      setModalOpen(true);
       navigate('/dashboard');
     });
   };
 
   return (
     <main className="flex justify-center">
+      {modalOpen && (
+        <Modal
+          setOpenModal={setModalOpen}
+          message="Successfuly update post !"
+        />
+      )}
+
       <div className="w-10/12 lg:w-6/12">
         <h1 className="mb-6">Update Post</h1>
         <form onSubmit={handleSubmit}>
